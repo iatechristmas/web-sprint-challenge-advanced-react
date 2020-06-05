@@ -1,7 +1,8 @@
 import react, { useState } from 'react';
+import {useLocalStorage} from './useLocalStorage'
 
 export const useForm = (key, initialValue) => {
-	const [ values, setValues ] = useState(key, initialValue);
+	const [ values, setValues ] = useLocalStorage(key, initialValue);
 
 	const handleChanges = (e) => {
 		setValues({
