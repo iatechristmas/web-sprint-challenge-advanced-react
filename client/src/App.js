@@ -6,6 +6,8 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 import { useDarkMode } from './hooks/useDarkMode'
+import {useCart} from './hooks/useCart'
+import {useLocalStorage} from './hooks/useLocalStorage'
 
 
 import "./styles.scss";
@@ -18,17 +20,17 @@ function App() {
     e.preventDefault();
     setDarkMode(!darkMode);
   };
-  const [cart, setCart] = useState([]);
+  const [cart, addToCart, removeFromCart] = useCart('cart', []);
 
   // add a plant to the cart
-  const addToCart = (plant) => {
-    setCart([...cart, plant]);
-  };
+  // const addToCart = (plant) => {
+  //   setCart([...cart, plant]);
+  // };
 
-  // remove a plant from the cart
-  const removeFromCart = (plant) => {
-    setCart(cart.filter((p) => p.id !== plant.id));
-  };
+  // // remove a plant from the cart
+  // const removeFromCart = (plant) => {
+  //   setCart(cart.filter((p) => p.id !== plant.id));
+  // };
 
   return (
     <div>

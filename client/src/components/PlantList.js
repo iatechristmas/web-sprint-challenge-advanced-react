@@ -39,6 +39,7 @@ export default class PlantList extends Component {
                 <p>💦 {plant.watering}x/month</p>
               </div>
               <button
+                data-testid="addtocart"
                 className="plant-button"
                 onClick={() => this.props.addToCart(plant)}
               >
