@@ -6,6 +6,7 @@ import CheckoutForm from './CheckoutForm';
 
 test('form header renders', () => {
 	render(<CheckoutForm />);
+	screen.findAllByText(/react plants/i);
 });
 
 test('form shows success message on submit with form details', () => {
